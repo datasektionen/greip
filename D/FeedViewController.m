@@ -24,7 +24,6 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     NSLog(@" i fwc %ld", [self.data count]);
     return [self.data count];
-//    return 5;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv
@@ -36,10 +35,16 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
     cell.text.text = post.text;
     cell.date.text = post.date;
     
-//    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.view.window.frame.size.width, cell.frame.size.height)];
+    cell.date.textAlignment = NSTextAlignmentCenter;
+//    cell.date.textColor = [UIColor purpleColor];
+    
+    [cell setFrame:CGRectMake(0, cell.frame.origin.y, self.view.window.bounds.size.width /*cell.frame.size.width*/, cell.frame.size.height)];
 //    cell.center.x = self.view.window.center.x;
+//    [cell setCenter:CGPointMake(self.view.window.center.x, cell.center.y)];
+//    [cell set]
 //    [cell.bo]
 //    [cell.view ]
+//    self.view.window.center.x
     
     return cell;
 }
