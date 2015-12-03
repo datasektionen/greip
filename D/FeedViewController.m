@@ -36,15 +36,14 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
     cell.date.text = post.date;
     
     cell.date.textAlignment = NSTextAlignmentCenter;
-//    cell.date.textColor = [UIColor purpleColor];
     
     [cell setFrame:CGRectMake(0, cell.frame.origin.y, self.view.window.bounds.size.width /*cell.frame.size.width*/, cell.frame.size.height)];
-//    cell.center.x = self.view.window.center.x;
-//    [cell setCenter:CGPointMake(self.view.window.center.x, cell.center.y)];
-//    [cell set]
-//    [cell.bo]
-//    [cell.view ]
-//    self.view.window.center.x
+    
+//    cell.layer.shadowColor
+    cell.layer.masksToBounds = NO;
+    cell.layer.shadowOffset = CGSizeMake(0, 8);
+    cell.layer.shadowRadius = 3;
+    cell.layer.shadowOpacity = 0.1;
     
     return cell;
 }
