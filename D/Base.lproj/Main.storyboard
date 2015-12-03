@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OCY-MT-Blc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="577-E4-87p">
+            <objects>
+                <navigationController id="OCY-MT-Blc" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="0J0-aL-mSF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.87843137250000003" green="0.0" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TnS-RI-ocY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xU0-jc-K9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-660" y="309"/>
+        </scene>
+        <!--Dataflödet-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Dataflödet" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aze-eh-DF2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <animations/>
+                                <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
+                                <color key="barTintColor" red="0.87843137250000003" green="0.0" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Datasektionen" id="m5t-jY-mOU"/>
+                                </items>
+                            </navigationBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQr-bF-ntq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <animations/>
+                                <connections>
+                                    <segue destination="dA2-bW-YB6" kind="embed" id="og7-KY-xzi"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.0" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QQr-bF-ntq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1DD-QM-wz6"/>
+                            <constraint firstItem="Aze-eh-DF2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cl6-mv-zR8">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="QQr-bF-ntq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="FsG-u9-llm"/>
+                            <constraint firstItem="Aze-eh-DF2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JoJ-8Y-Ivk"/>
+                            <constraint firstItem="Aze-eh-DF2" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="N0i-aa-DfX"/>
+                            <constraint firstItem="QQr-bF-ntq" firstAttribute="top" secondItem="Aze-eh-DF2" secondAttribute="bottom" id="UXp-NF-vHl"/>
+                            <constraint firstItem="Aze-eh-DF2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d5r-BE-hLQ"/>
+                            <constraint firstItem="QQr-bF-ntq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="p2O-ZK-bBW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="QQr-bF-ntq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1DD-QM-wz6"/>
+                                <exclude reference="FsG-u9-llm"/>
+                                <exclude reference="UXp-NF-vHl"/>
+                                <exclude reference="p2O-ZK-bBW"/>
+                                <exclude reference="Cl6-mv-zR8"/>
+                                <exclude reference="JoJ-8Y-Ivk"/>
+                                <exclude reference="N0i-aa-DfX"/>
+                                <exclude reference="d5r-BE-hLQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="QQr-bF-ntq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1DD-QM-wz6"/>
+                                <include reference="FsG-u9-llm"/>
+                                <include reference="UXp-NF-vHl"/>
+                                <include reference="p2O-ZK-bBW"/>
+                                <include reference="Cl6-mv-zR8"/>
+                                <include reference="JoJ-8Y-Ivk"/>
+                                <include reference="N0i-aa-DfX"/>
+                                <include reference="d5r-BE-hLQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dataflödet" id="iYp-6q-hc8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="181.5" y="301"/>
+        </scene>
+        <!--Feed View Controller-->
+        <scene sceneID="OC4-No-FjN">
+            <objects>
+                <collectionViewController id="dA2-bW-YB6" customClass="FeedViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="bZ2-o8-0KQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.12254231540780318" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SPX-0F-Bge">
+                            <size key="itemSize" width="400" height="125"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="292" placeholderIntrinsicHeight="125" reuseIdentifier="sbfeedcell" id="sjX-EQ-2Gr" customClass="FeedCell">
+                                <rect key="frame" x="136.5" y="0.0" width="327.5" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="125"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lotsa lotsa lotsa text alj aie akwej awue lobi oilb k serbafkjshbf iluhse ijher kjn gswer uijngs." lineBreakMode="clip" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qbH-jJ-jkX">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="24" width="276" height="93"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="25" y="24" width="276" height="93"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4a-tQ-vBO">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="24" y="8" width="42" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="8" width="143" height="21"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvp-qs-51C">
+                                            <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="182" y="8" width="102" height="21"/>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="217" y="8" width="102" height="21"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                    <animations/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <animations/>
+                                <color key="backgroundColor" white="0.41658100328947373" alpha="1" colorSpace="calibratedWhite"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="qbH-jJ-jkX"/>
+                                        <exclude reference="Z4a-tQ-vBO"/>
+                                        <exclude reference="fvp-qs-51C"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="qbH-jJ-jkX"/>
+                                        <include reference="Z4a-tQ-vBO"/>
+                                        <include reference="fvp-qs-51C"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="date" destination="fvp-qs-51C" id="ghJ-Bz-HdB"/>
+                                    <outlet property="text" destination="qbH-jJ-jkX" id="Fgf-iC-mfd"/>
+                                    <outlet property="title" destination="Z4a-tQ-vBO" id="E2Z-bP-vPg"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="dA2-bW-YB6" id="9he-2W-dab"/>
+                            <outlet property="delegate" destination="dA2-bW-YB6" id="0Xh-eX-vos"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5c-aA-QMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="930" y="324.75"/>
+        </scene>
+    </scenes>
+</document>
