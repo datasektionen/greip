@@ -41,7 +41,9 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
     cell.text.text = post.text;
     cell.date.text = post.date;
     
-    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, [self.win], cell.frame.size.height)];
+    [cell setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, self.view.window.frame.size.width, cell.frame.size.height)];
+//    cell.center.x = self.view.window.center.x;
+//    [cell.bo]
     
     return cell;
 }
