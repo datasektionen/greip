@@ -11,10 +11,7 @@
 
 @implementation FeedCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-//    NSLog(@"frame size: %f", self.frame.size.width);
-//    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.x, self.window.frame.size.width, self.frame.size.height); // origin, size
+- (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     return self;
 }

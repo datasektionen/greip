@@ -15,12 +15,8 @@
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // Läs in data direkt när appen startar
     [GetData getData];
-    
-//    NSLog(@" i appdelegate %ld", [data count]);
-    
-//    self.feed = [[Feed alloc] init];
-//    [self.feed setPosts:data];
     
     return YES;
 }

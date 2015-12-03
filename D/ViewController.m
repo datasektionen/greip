@@ -18,11 +18,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    for (UIView *view in [self.view subviews]) {
-//        NSLog(@"%@", [view description]);
-//        view.frame = 
-//    }
-    
 }
 
 - (void)didReceiveMemoryWarning {

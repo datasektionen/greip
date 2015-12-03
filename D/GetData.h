@@ -14,6 +14,7 @@
 
 @interface GetData : NSObject
 
+// Data hämtas vid första anrop
 + (NSArray *) getData;
 
 @end

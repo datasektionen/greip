@@ -31,11 +31,6 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     FeedCell *cell = [cv dequeueReusableCellWithReuseIdentifier:feedCellID forIndexPath:indexPath];
     
-//    cell.text.text = @"Lotsa lotsa lotsa aower hawehr aiw uerh liawekbj raiuwe hralekjnlak text alj aie akwej awue lobi oilb k serbafkjshbf iluhse ijher kjn gswer uijngs.";
-//    
-//    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-//    [dateFormat setDateFormat:@"MMM dd yyyy"];
-//    cell.date.text = [dateFormat stringFromDate:[NSDate date]];
     Post *post = [self.data objectAtIndex:indexPath.row];
     cell.title.text = post.title;
     cell.text.text = post.text;
@@ -49,8 +44,7 @@ NSString *feedCellID = @"sbfeedcell";               // UICollectionViewCell stor
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    [[self presentingViewController] performSelector:@selector(chooseEmoji:) withObject:[emojiz substringWithRange:NSMakeRange(2*indexPath.row, 2)]];
-//    [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
+
 }
 
 
