@@ -1,6 +1,6 @@
 //
 //  GetData.m
-//  D
+//  Greip
 //
 //  Created by Emma Nimstad on 8/10/15.
 //  Copyright © 2015 Emma Nimstad. All rights reserved.

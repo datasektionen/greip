@@ -1,6 +1,6 @@
 //
 //  Post.m
-//  D
+//  Greip
 //
 //  Created by Emma Nimstad on 24/9/15.
 //  Copyright © 2015 Emma Nimstad. All rights reserved.
@@ -20,10 +20,10 @@ NSDateFormatter *dateFormatterFromServer, *dateFormatterFromDate;
     dateFormatterFromServer = [[NSDateFormatter alloc] init];
     dateFormatterFromDate = [[NSDateFormatter alloc] init];
     
-    // ändra det här efter hur datumet ser ut på servern
+//  Change this to match how date is saved on server
     [dateFormatterFromServer setDateFormat:@"d MMM"];//:NSDateFormatterMediumStyle];
     
-    // ändra det här efter hur datumet ska visas
+//  Change this to how the date should be shown
     [dateFormatterFromDate setDateStyle:NSDateFormatterMediumStyle];
     
     defDate = [NSDate dateWithTimeIntervalSince1970:1450000000];

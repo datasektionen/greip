@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  D
+//  Greip
 //
 //  Created by Emma Nimstad on 24/9/15.
 //  Copyright © 2015 Emma Nimstad. All rights reserved.
@@ -15,7 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // Läs in data direkt när appen startar
+    // Fetch data when the app starts
     [GetData getData];
     
     return YES;
@@ -25,9 +25,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
-//    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    
+
     return YES;
 }
 
