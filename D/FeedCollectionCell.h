@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FeedCell : UITableViewCell
+@interface FeedCollectionCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *title;
 @property (strong, nonatomic) IBOutlet UILabel *text;

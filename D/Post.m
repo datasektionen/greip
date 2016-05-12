@@ -11,7 +11,7 @@
 
 NSDate *defDate;
 NSString *defTitle = @"Godmorgon";
-NSString *defText = @"Lorem ipsum lotsa aower hawehr aiw uerh liawekbj raiuwe hralekjnlak text alj aie akwej awue lobi oilb k serbafkjshbf iluhse ijher kjn gswer uijngs.";
+NSString *defText = @"Lorem ipsum lotsa aower hawehr aiw uerh liawekbj raiuwe hralekjnlak text alj aie akwej awue lobi oilb k.";
 NSDateFormatter *dateFormatterFromServer, *dateFormatterFromDate;
 
 @implementation Post
