@@ -20,6 +20,10 @@ NSString *reusableCellId = @"tablefeedcell";
 // Fetch cell data
 - (void) viewDidLoad{
     data = [GetData getData];
+    
+    //  Must set the following properties
+    self.tableView.estimatedRowHeight = 200;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -35,13 +39,15 @@ NSString *reusableCellId = @"tablefeedcell";
     cell.text.text = post.text;
     cell.date.text = post.date;
     
+//    [cell setSeparatorInset:<#(UIEdgeInsets)#>]
+    
 //    [cell setFrame:CGRectMake(0, cell.frame.origin.y, self.view.window.bounds.size.width, cell.frame.size.height)];
     
     //  Adds a shadow under the cell
-    cell.layer.masksToBounds = NO;
-    cell.layer.shadowOffset = CGSizeMake(0, 8);
-    cell.layer.shadowRadius = 3;
-    cell.layer.shadowOpacity = 0.2;
+//    cell.layer.masksToBounds = NO;
+//    cell.layer.shadowOffset = CGSizeMake(0, 8);
+//    cell.layer.shadowRadius = 3;
+//    cell.layer.shadowOpacity = 0.2;
     
     return cell;
 }
