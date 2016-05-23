@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9CDF338C1BB4595F00B46196"
+               BlueprintIdentifier = "9C97373C1CF33B4000DAC6EB"
                BuildableName = "Greip.app"
                BlueprintName = "Greip"
                ReferencedContainer = "container:Greip.xcodeproj">
@@ -28,31 +28,11 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9CDF33A51BB4596000B46196"
-               BuildableName = "Greip.xctest"
-               BlueprintName = "GreipTests"
-               ReferencedContainer = "container:Greip.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9CDF33B01BB4596000B46196"
-               BuildableName = "Greip.xctest"
-               BlueprintName = "GreipUITests"
-               ReferencedContainer = "container:Greip.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9CDF338C1BB4595F00B46196"
+            BlueprintIdentifier = "9C97373C1CF33B4000DAC6EB"
             BuildableName = "Greip.app"
             BlueprintName = "Greip"
             ReferencedContainer = "container:Greip.xcodeproj">
@@ -75,7 +55,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9CDF338C1BB4595F00B46196"
+            BlueprintIdentifier = "9C97373C1CF33B4000DAC6EB"
             BuildableName = "Greip.app"
             BlueprintName = "Greip"
             ReferencedContainer = "container:Greip.xcodeproj">
@@ -94,7 +74,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9CDF338C1BB4595F00B46196"
+            BlueprintIdentifier = "9C97373C1CF33B4000DAC6EB"
             BuildableName = "Greip.app"
             BlueprintName = "Greip"
             ReferencedContainer = "container:Greip.xcodeproj">

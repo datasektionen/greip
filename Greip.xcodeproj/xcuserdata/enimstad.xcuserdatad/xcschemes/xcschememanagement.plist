@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>D.xcscheme</key>
+		<key>Greip.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,17 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>9CDF338C1BB4595F00B46196</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CDF33A51BB4596000B46196</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9CDF33B01BB4596000B46196</key>
+		<key>9C97373C1CF33B4000DAC6EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
