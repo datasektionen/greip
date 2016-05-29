@@ -12,11 +12,18 @@ import UIKit
 var reusableCellId = "tablefeedcell"
 
 class FeedViewController : UITableViewController {
-    var data = []
-    
+	internal var data: [Post] = [] {
+		didSet {
+			self.tableView.reloadData()
+//			self.reloadInputViews()
+			
+//			print("number of posts: \(data.count)")
+		}
+	}
+		
     override func viewDidLoad() {
-        data = GetData.getData()
-        
+		GetData.getData(self)
+		
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -27,7 +34,7 @@ class FeedViewController : UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellId) as! FeedCell
-        let post = data.objectAtIndex(indexPath.row) as! Post
+        let post = data[indexPath.row]
         
         cell.title.text = post.title
         cell.content.text = post.content
