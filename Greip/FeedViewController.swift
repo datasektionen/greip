@@ -15,15 +15,11 @@ class FeedViewController : UITableViewController {
 	internal var data: [Post] = [] {
 		didSet {
 			self.tableView.reloadData()
-//			self.reloadInputViews()
-			
-//			print("number of posts: \(data.count)")
+			print("Data set")
 		}
 	}
 		
     override func viewDidLoad() {
-		GetData.getData(self)
-		
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -38,7 +34,6 @@ class FeedViewController : UITableViewController {
         
         cell.title.text = post.title
         cell.content.text = post.content
-        cell.time.text = post.time
         
         cell.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12)
         cell.preservesSuperviewLayoutMargins = false

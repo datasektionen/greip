@@ -14,7 +14,7 @@ class GetData : NSObject {
 	static let url = "https://prometheus.datasektionen.se/api/list/sv/all"
 	static var data = [Post]()
 	
-	class func getData (vc: FeedViewController) -> Void {
+	class func getData (nvc: UINavigationController) -> Void {
 		
 		let URLSession = NSURLSession(configuration: .defaultSessionConfiguration())
 		
@@ -24,24 +24,31 @@ class GetData : NSObject {
 				return
 			}
 			do {
+				print("Data received")
 				let json = try NSJSONSerialization.JSONObjectWithData(urldata!, options: .AllowFragments)
-				
-				
-//				print("parsed data from server is \(json)")
 				
 				for post in json as! [[String: AnyObject]] {
 					let title = post["title_sv"] as? String
 					let time = post["publishDate"] as? String
 					let content = post["content_sv"] as? String
 					
-					let postpost = Post(title: title, date: time, content: content)
+					let postpost = Post(title: title, date: time, content: content, author: nil)
 					
 					data.append(postpost)
-					
-					print(title!)
 				}
 				
-				vc.data = data
+				let vc = nvc.viewControllers[0] as? FeedViewController
+				
+				if vc == nil {
+					print("nvc has no view...")
+					return
+				}
+				
+				dispatch_async(dispatch_get_main_queue(), { () -> Void in
+					vc!.data = data
+					let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+					appDelegate.window!.rootViewController = nvc
+				})
 				
 			} catch {
 				print("error while parsing json")
@@ -51,6 +58,7 @@ class GetData : NSObject {
 		let prometheus = URLSession.dataTaskWithURL(NSURL(string: url)!,
 		                                            completionHandler: handlePrometheusResponse(_:_:_:))
 		
+		print("Requesting data")
 		prometheus.resume()
 		
     }

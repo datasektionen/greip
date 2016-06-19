@@ -11,7 +11,6 @@ import UIKit
 
 
 class FeedCell : UITableViewCell {
-    @IBOutlet var time: UILabel!
     @IBOutlet var content: UILabel!
     @IBOutlet var title: UILabel!
     

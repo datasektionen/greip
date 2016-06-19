@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-//        GetData.getData()
+		let dataFeed = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DataFeedNC") as! UINavigationController
+		
+        GetData.getData(dataFeed)
         return true
     }
     
