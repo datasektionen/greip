@@ -15,17 +15,18 @@ var defaultTime = NSDate(timeIntervalSince1970: 1465000000)
 var dateFormatterFromServer = NSDateFormatter(), dateFormatterFromDate = NSDateFormatter()
 
 class Post : NSObject {
-    let content, time, title, author: String!
+	// ligger det krav på att dessa fält alltid finns?
+	let content, time, title, author: String
     
     class override func initialize () {
         dateFormatterFromDate.dateStyle = .ShortStyle
 		
 		dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     }
-    
-	init(title: String?, date: String?, content: String?, author: String?) {
+
+	init(title: String, date: String, content: String, author: String) {
         self.title = title
-        self.time = dateFormatterFromDate.stringFromDate(dateFormatterFromServer.dateFromString(date!)!)
+        self.time = dateFormatterFromDate.stringFromDate(dateFormatterFromServer.dateFromString(date)!)
         self.content = content
 		self.author = author
     }

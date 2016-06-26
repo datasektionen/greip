@@ -12,7 +12,7 @@ import UIKit
 var reusableCellId = "tablefeedcell"
 
 class FeedViewController : UITableViewController {
-	internal var data: [Post] = [] {
+	var data: [Post] = [] {
 		didSet {
 			self.tableView.reloadData()
 			print("Data set")
@@ -31,9 +31,8 @@ class FeedViewController : UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellId) as! FeedCell
         let post = data[indexPath.row]
-        
-        cell.title.text = post.title
-        cell.content.text = post.content
+		
+		cell.post = post
         
         cell.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12)
         cell.preservesSuperviewLayoutMargins = false
@@ -41,4 +40,18 @@ class FeedViewController : UITableViewController {
         
         return cell
     }
+
+	override func showViewController(vc: UIViewController, sender: AnyObject?) {
+		
+		let data = (sender as! FeedCell).post
+		let detailView = vc as! PostDetailVC
+		detailView.post = data
+		
+		self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+		
+		detailView.navigationItem.setLeftBarButtonItem(UIBarButtonItem.init(
+			barButtonSystemItem: .Stop, target: detailView, action: #selector(PostDetailVC.close)), animated: false)
+		
+		navigationController!.pushViewController(vc, animated: false)
+	}
 }

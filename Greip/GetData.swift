@@ -11,16 +11,25 @@ import UIKit
 
 class GetData : NSObject {
 	
-	static let url = "https://prometheus.datasektionen.se/api/list/sv/all"
-	static var data = [Post]()
+	static private let url = "https://prometheus.datasektionen.se/api/list/sv/all"
+	static private var data = [Post]()
+	static private var navViewController = UINavigationController()
+	static private var feedViewController = FeedViewController()
 	
-	class func getData (nvc: UINavigationController) -> Void {
-		
-		let URLSession = NSURLSession(configuration: .defaultSessionConfiguration())
+	class func useData() {
+		feedViewController.data = data
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		appDelegate.window!.rootViewController = navViewController
+	}
+	
+	class func getData (nvc: UINavigationController) {
+		navViewController = nvc
+		feedViewController = nvc.viewControllers[0] as! FeedViewController
 		
 		func handlePrometheusResponse(urldata: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
 			if error != nil {
 				print("error on http request")
+				useDummyData()
 				return
 			}
 			do {
@@ -31,8 +40,9 @@ class GetData : NSObject {
 					let title = post["title_sv"] as? String
 					let time = post["publishDate"] as? String
 					let content = post["content_sv"] as? String
+					let author = post["author"] as? String
 					
-					let postpost = Post(title: title, date: time, content: content, author: nil)
+					let postpost = Post(title: title!, date: time!, content: content!, author: author!)
 					
 					data.append(postpost)
 				}
@@ -44,17 +54,14 @@ class GetData : NSObject {
 					return
 				}
 				
-				dispatch_async(dispatch_get_main_queue(), { () -> Void in
-					vc!.data = data
-					let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-					appDelegate.window!.rootViewController = nvc
-				})
+				dispatch_async(dispatch_get_main_queue(), useData)
 				
 			} catch {
 				print("error while parsing json")
 			}
 		}
 		
+		let URLSession = NSURLSession(configuration: .defaultSessionConfiguration())
 		let prometheus = URLSession.dataTaskWithURL(NSURL(string: url)!,
 		                                            completionHandler: handlePrometheusResponse(_:_:_:))
 		
@@ -63,12 +70,12 @@ class GetData : NSObject {
 		
     }
 	
-	class func getDummyData () -> [Post] {
+	class func useDummyData () {
 		let post = Post()
 		
 		let a = Array(count: 7, repeatedValue: post)
 		data = a
-		return data
+		dispatch_async(dispatch_get_main_queue(), useData)
 	}
 }
 

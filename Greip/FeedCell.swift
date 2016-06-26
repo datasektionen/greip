@@ -11,9 +11,15 @@ import UIKit
 
 
 class FeedCell : UITableViewCell {
-    @IBOutlet var content: UILabel!
-    @IBOutlet var title: UILabel!
-    
+    @IBOutlet private var content: UILabel!
+    @IBOutlet private var title: UILabel!
+	
+	var post: Post! {
+		didSet {
+			content.text = post.content
+			title.text = post.title
+		}
+	}
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
