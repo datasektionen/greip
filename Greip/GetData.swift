@@ -11,7 +11,7 @@ import UIKit
 
 class GetData : NSObject {
 	
-	static private let url = "https://prometheus.datasektionen.se/api/list/sv/all"
+	static private let url = "https://prometheus.datasektionen.se/api/list/all"
 	static private var data = [Post]()
 	static private var navViewController = UINavigationController()
 	static private var feedViewController = FeedViewController()

@@ -18,12 +18,13 @@ class PostDetailVC : UIViewController {
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+		self.automaticallyAdjustsScrollViewInsets = false
 	}
 	
 	override func viewDidLoad() {
 		postTitle.text = post.title
 		content.text = post.content
-		meta.text = "Postat av \(post.author), \(post.time)"
+		meta.text = "— \(post.author), \(post.time)"
 	}
 	
 	func close() {
