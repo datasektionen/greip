@@ -11,12 +11,12 @@ import UIKit
 
 
 class FeedCell : UITableViewCell {
-    @IBOutlet private var content: UILabel!
-    @IBOutlet private var title: UILabel!
+    @IBOutlet fileprivate var content: UILabel!
+    @IBOutlet fileprivate var title: UILabel!
 	
 	var post: Post! {
 		didSet {
-			content.text = post.content
+			content.attributedText = post.content
 			title.text = post.title
 		}
 	}

@@ -9,30 +9,31 @@
 import Foundation
 
 let defaultTitle = "Bacon ipsum lorum ipsum"
-let defaultContent = "Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock."
+let defaultContent = NSAttributedString(string:"Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock.")
 let defaultAuthor = "nimstad"
-var defaultTime = NSDate(timeIntervalSince1970: 1465000000)
-var dateFormatterFromServer = NSDateFormatter(), dateFormatterFromDate = NSDateFormatter()
+var defaultTime = Date(timeIntervalSince1970: 1465000000)
+var dateFormatterFromServer = DateFormatter(), dateFormatterFromDate = DateFormatter()
 
 class Post : NSObject {
 	// ligger det krav på att dessa fält alltid finns?
-	let content, time, title, author: String
+	let content: NSAttributedString
+	let time, title, author: String
     
     class override func initialize () {
-        dateFormatterFromDate.dateStyle = .ShortStyle
+        dateFormatterFromDate.dateStyle = .short
 		
 		dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
     }
 
-	init(title: String, date: String, content: String, author: String) {
+	init(title: String, date: String, content: NSAttributedString, author: String) {
         self.title = title
-        self.time = dateFormatterFromDate.stringFromDate(dateFormatterFromServer.dateFromString(date)!)
+        self.time = dateFormatterFromDate.string(from: dateFormatterFromServer.date(from: date)!)
         self.content = content
 		self.author = author
     }
     
     override init () {
-        time = dateFormatterFromDate.stringFromDate(defaultTime)
+        time = dateFormatterFromDate.string(from: defaultTime)
         title = defaultTitle
         content = defaultContent
 		author = defaultAuthor

@@ -11,22 +11,22 @@ import UIKit
 
 class GetData : NSObject {
 	
-	static private let url = "https://prometheus.datasektionen.se/api/list/all"
-	static private var data = [Post]()
-	static private var navViewController = UINavigationController()
-	static private var feedViewController = FeedViewController()
+	static fileprivate let urlstring = "https://prometheus.datasektionen.se/api/list/all"
+	static fileprivate var data = [Post]()
+	static fileprivate var navViewController = UINavigationController()
+	static fileprivate var feedViewController = FeedViewController()
 	
 	class func useData() {
 		feedViewController.data = data
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		appDelegate.window!.rootViewController = navViewController
 	}
 	
-	class func getData (nvc: UINavigationController) {
+	class func getData (_ nvc: UINavigationController) {
 		navViewController = nvc
 		feedViewController = nvc.viewControllers[0] as! FeedViewController
 		
-		func handlePrometheusResponse(urldata: NSData?, response: NSURLResponse?, error: NSError?) -> Void {
+		func handlePrometheusResponse(_ urldata: Data?, response: URLResponse?, error: Error?) -> Void {
 			if error != nil {
 				print("error on http request")
 				useDummyData()
@@ -34,15 +34,19 @@ class GetData : NSObject {
 			}
 			do {
 				print("Data received")
-				let json = try NSJSONSerialization.JSONObjectWithData(urldata!, options: .AllowFragments)
+				let json = try JSONSerialization.jsonObject(with: urldata!, options: .allowFragments)
 				
 				for post in json as! [[String: AnyObject]] {
 					let title = post["title_sv"] as? String
 					let time = post["publishDate"] as? String
-					let content = post["content_sv"] as? String
+					let rawcontent = post["content_sv"] as? String
+					let content = try! NSAttributedString(
+						data: (rawcontent?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
+						options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+						documentAttributes: nil)
 					let author = post["author"] as? String
 					
-					let postpost = Post(title: title!, date: time!, content: content!, author: author!)
+					let postpost = Post(title: title!, date: time!, content: content, author: author!)
 					
 					data.append(postpost)
 				}
@@ -54,16 +58,17 @@ class GetData : NSObject {
 					return
 				}
 				
-				dispatch_async(dispatch_get_main_queue(), useData)
+				DispatchQueue.main.async(execute: useData)
 				
 			} catch {
 				print("error while parsing json")
 			}
 		}
 		
-		let URLSession = NSURLSession(configuration: .defaultSessionConfiguration())
-		let prometheus = URLSession.dataTaskWithURL(NSURL(string: url)!,
-		                                            completionHandler: handlePrometheusResponse(_:_:_:))
+		//let URLSession = Foundation.URLSession(configuration: .default())
+		let session = URLSession(configuration:URLSessionConfiguration.default)
+		let url = URL(string: urlstring)!
+		let prometheus = session.dataTask(with: url, completionHandler: handlePrometheusResponse)
 		
 		print("Requesting data")
 		prometheus.resume()
@@ -73,9 +78,9 @@ class GetData : NSObject {
 	class func useDummyData () {
 		let post = Post()
 		
-		let a = Array(count: 7, repeatedValue: post)
+		let a = Array(repeating: post, count: 7)
 		data = a
-		dispatch_async(dispatch_get_main_queue(), useData)
+		DispatchQueue.main.async(execute: useData)
 	}
 }
 

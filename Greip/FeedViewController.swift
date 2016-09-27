@@ -24,33 +24,33 @@ class FeedViewController : UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reusableCellId) as! FeedCell
-        let post = data[indexPath.row]
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellId) as! FeedCell
+        let post = data[(indexPath as NSIndexPath).row]
 		
 		cell.post = post
         
         cell.separatorInset = UIEdgeInsetsMake(0, 12, 0, 12)
         cell.preservesSuperviewLayoutMargins = false
-        cell.layoutMargins = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsets.zero
         
         return cell
     }
 
-	override func showViewController(vc: UIViewController, sender: AnyObject?) {
+	override func show(_ vc: UIViewController, sender: Any?) {
 		
 		let data = (sender as! FeedCell).post
 		let detailView = vc as! PostDetailVC
 		detailView.post = data
 		
-		self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
+		self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
 		
-		detailView.navigationItem.setLeftBarButtonItem(UIBarButtonItem.init(
-			barButtonSystemItem: .Stop, target: detailView, action: #selector(PostDetailVC.close)), animated: false)
+		detailView.navigationItem.setLeftBarButton(UIBarButtonItem.init(
+			barButtonSystemItem: .stop, target: detailView, action: #selector(PostDetailVC.close)), animated: false)
 		
 		navigationController!.pushViewController(vc, animated: false)
 	}

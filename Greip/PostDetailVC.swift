@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class PostDetailVC : UIViewController {
-	@IBOutlet private var postTitle: UILabel!
-	@IBOutlet private var content: UILabel!
-	@IBOutlet private var meta: UILabel!
+	@IBOutlet fileprivate var postTitle: UILabel!
+	@IBOutlet fileprivate var content: UILabel!
+	@IBOutlet fileprivate var meta: UILabel!
 	
 	var post: Post!
 	
@@ -23,12 +23,12 @@ class PostDetailVC : UIViewController {
 	
 	override func viewDidLoad() {
 		postTitle.text = post.title
-		content.text = post.content
+		content.attributedText = post.content
 		meta.text = "— \(post.author), \(post.time)"
 	}
 	
 	func close() {
 		print("Will quit detail")
-		navigationController?.popViewControllerAnimated(false)
+		navigationController?.popViewController(animated: false)
 	}
 }

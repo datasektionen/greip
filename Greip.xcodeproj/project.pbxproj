@@ -132,6 +132,7 @@
 					9C97373C1CF33B4000DAC6EB = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6MU956CT6D;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -296,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nimstad.Greip;
 				PRODUCT_NAME = "Dataflödet";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -308,6 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nimstad.Greip;
 				PRODUCT_NAME = "Dataflödet";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
