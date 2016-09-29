@@ -11,7 +11,7 @@ import UIKit
 
 class PostDetailVC : UIViewController {
 	@IBOutlet fileprivate var postTitle: UILabel!
-	@IBOutlet fileprivate var content: UILabel!
+	@IBOutlet fileprivate var content: UITextView!
 	@IBOutlet fileprivate var meta: UILabel!
 	
 	var post: Post!
@@ -24,6 +24,7 @@ class PostDetailVC : UIViewController {
 	override func viewDidLoad() {
 		postTitle.text = post.title
 		content.attributedText = post.content
+		content.isEditable = false
 		meta.text = "— \(post.author), \(post.time)"
 	}
 	
