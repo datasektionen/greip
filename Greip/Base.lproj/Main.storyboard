@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l6d-Ks-N5c">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="l6d-Ks-N5c">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1J-JB-nvk">
+                                <rect key="frame" x="103" y="309.5" width="169.5" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -91,10 +95,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="126"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="v91-If-Ypm" id="bXH-gm-cYN">
-                                    <frame key="frameInset" width="375" height="125.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
+                                            <rect key="frame" x="16" y="40.5" width="343" height="54"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock.">
                                                     <attributes>
@@ -107,6 +112,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-4U-294">
+                                            <rect key="frame" x="16" y="12" width="35.5" height="20.5"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.93809878830000004" green="0.0" blue="0.42589530349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -158,7 +164,7 @@
                                 <connections>
                                     <outlet property="content" destination="QER-bf-2Yj" id="DOX-ao-1k9"/>
                                     <outlet property="title" destination="3L3-4U-294" id="dVA-RX-LG1"/>
-                                    <segue destination="m1S-WO-jqr" kind="show" id="Pev-AG-dml"/>
+                                    <segue destination="m1S-WO-jqr" kind="show" identifier="" id="H0F-aP-YtH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -172,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IB7-dG-z3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-442.5" y="-496.5"/>
+            <point key="canvasLocation" x="-444" y="-497.00149925037488"/>
         </scene>
         <!--DetailView-->
         <scene sceneID="m0F-Ft-vUA">
@@ -187,18 +193,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Or-xk-947">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG0-3e-ldU">
+                                        <rect key="frame" x="16" y="16" width="343" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                         <color key="textColor" red="0.93809878830000004" green="0.0" blue="0.42589530349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postad av någon" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qQ-7v-0iD">
+                                        <rect key="frame" x="240" y="78.5" width="119" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                         <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ballerup" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gan-bs-Tsc">
+                                        <rect key="frame" x="16" y="45.5" width="343" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
@@ -211,13 +221,13 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="gan-bs-Tsc" firstAttribute="leading" secondItem="VG0-3e-ldU" secondAttribute="leading" id="1Gz-M8-igs"/>
                                     <constraint firstAttribute="bottom" secondItem="4qQ-7v-0iD" secondAttribute="bottom" constant="20" id="4F7-V8-jDk"/>
                                     <constraint firstItem="gan-bs-Tsc" firstAttribute="centerX" secondItem="8Or-xk-947" secondAttribute="centerX" id="5xd-YC-j0V"/>
+                                    <constraint firstItem="gan-bs-Tsc" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leadingMargin" constant="8" id="Ikh-lt-cpE"/>
                                     <constraint firstItem="VG0-3e-ldU" firstAttribute="top" secondItem="8Or-xk-947" secondAttribute="top" constant="16" id="WUF-Vq-j2b"/>
                                     <constraint firstItem="VG0-3e-ldU" firstAttribute="centerX" secondItem="8Or-xk-947" secondAttribute="centerX" id="Xyw-WH-Xjj"/>
                                     <constraint firstItem="VG0-3e-ldU" firstAttribute="trailing" secondItem="8Or-xk-947" secondAttribute="trailing" constant="-16" id="YSH-ai-UME"/>
-                                    <constraint firstItem="VG0-3e-ldU" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leading" constant="16" id="YZf-Go-kZv"/>
+                                    <constraint firstItem="VG0-3e-ldU" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leadingMargin" constant="8" id="YZf-Go-kZv"/>
                                     <constraint firstItem="4qQ-7v-0iD" firstAttribute="top" secondItem="gan-bs-Tsc" secondAttribute="bottom" id="sZx-5i-cJT"/>
                                     <constraint firstItem="gan-bs-Tsc" firstAttribute="top" secondItem="VG0-3e-ldU" secondAttribute="bottom" constant="8" id="y3U-dz-JMI"/>
                                     <constraint firstItem="4qQ-7v-0iD" firstAttribute="trailing" secondItem="8Or-xk-947" secondAttribute="trailing" constant="-16" id="yae-hg-A3h"/>
@@ -282,7 +292,6 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Dataflödet" id="pcI-eX-pe2"/>
                     <connections>
                         <outlet property="content" destination="gan-bs-Tsc" id="uaA-oD-8X5"/>
                         <outlet property="meta" destination="4qQ-7v-0iD" id="rKF-xt-Qbf"/>
