@@ -17,6 +17,7 @@ class GetData : NSObject {
 	static fileprivate var feedViewController = FeedViewController()
 	
 	class func useData() {
+		print("Using data")
 		feedViewController.data = data
 		let appDelegate = UIApplication.shared.delegate as! AppDelegate
 		appDelegate.window!.rootViewController = navViewController
@@ -40,10 +41,15 @@ class GetData : NSObject {
 					let title = post["title_sv"] as? String
 					let time = post["publishDate"] as? String
 					let rawcontent = post["content_sv"] as? String
-					let content = try! NSAttributedString(
+					var content: NSAttributedString
+					if let attcontent = try? NSAttributedString(
 						data: (rawcontent?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
 						options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
-						documentAttributes: nil)
+						documentAttributes: nil) {
+							content = attcontent
+					} else {
+						content = NSAttributedString(string:rawcontent!)
+					}
 					let author = post["author"] as? String
 					
 					let postpost = Post(title: title!, date: time!, content: content, author: author!)
@@ -57,7 +63,8 @@ class GetData : NSObject {
 					print("nvc has no view...")
 					return
 				}
-				
+
+				print("Use data")
 				DispatchQueue.main.async(execute: useData)
 				
 			} catch {

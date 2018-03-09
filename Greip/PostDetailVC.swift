@@ -27,7 +27,7 @@ class PostDetailVC : UIViewController {
 		let mutableContent = NSMutableAttributedString(attributedString:post.content)
 		mutableContent.addAttributes(attributes, range:NSRange(location: 0, length: mutableContent.mutableString.length))
 
-		let staticContent = NSAttributedString(string: post.content.string, attributes: attributes)
+		_ = NSAttributedString(string: post.content.string, attributes: attributes)
 
 		content.attributedText = mutableContent		//post.content
 		meta.text = "— \(post.author), \(post.time)"
