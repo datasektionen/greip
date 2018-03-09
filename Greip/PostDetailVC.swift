@@ -18,7 +18,6 @@ class PostDetailVC : UIViewController {
 
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-		//self.automaticallyAdjustsScrollViewInsets = false
 	}
 
 	override func viewDidLoad() {
