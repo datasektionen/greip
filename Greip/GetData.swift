@@ -39,12 +39,14 @@ class GetData : NSObject {
 				
 				for post in json as! [[String: AnyObject]] {
 					let title = post["title_sv"] as? String
+					print(title!)
 					let time = post["publishDate"] as? String
+
 					let rawcontent = post["content_sv"] as? String
 					var content: NSAttributedString
 					if let attcontent = try? NSAttributedString(
 						data: (rawcontent?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
-						options: [ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+						options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
 						documentAttributes: nil) {
 							content = attcontent
 					} else {
