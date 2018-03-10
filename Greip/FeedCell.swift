@@ -16,9 +16,6 @@ class FeedCell : UITableViewCell {
 	
 	var post: Post! {
 		didSet {
-//			let attributes = content.attributedText?.attributes(at: 0, effectiveRange: nil)
-//			let mutableContent = NSMutableAttributedString(attributedString: post.content)
-//			mutableContent.addAttributes(attributes!, range: NSRange(location: 0, length: mutableContent.mutableString.length))
 			let text = post.content.string
 			content.text = text
 			title.text = post.title

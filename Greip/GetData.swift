@@ -12,18 +12,21 @@ import UIKit
 class GetData : NSObject {
 	
 	static fileprivate let urlstring = "https://prometheus.datasektionen.se/api/list/all"
-	static fileprivate var data = [Post]()
 	static fileprivate var navViewController = UINavigationController()
 	static fileprivate var feedViewController = FeedViewController()
 	
-	class func useData() {
-		print("Using data")
-		feedViewController.data = data
-		let appDelegate = UIApplication.shared.delegate as! AppDelegate
-		appDelegate.window!.rootViewController = navViewController
+	class func useData(_ data: [Post]) {
+		// Run on the main thread as the UI will be updated
+		DispatchQueue.main.async {
+			print("Using data")
+			feedViewController.data = data
+			let appDelegate = UIApplication.shared.delegate as! AppDelegate
+			appDelegate.window!.rootViewController = navViewController
+		}
 	}
 	
 	class func getData (_ nvc: UINavigationController) {
+		var data = [Post]()
 		navViewController = nvc
 		feedViewController = nvc.viewControllers[0] as! FeedViewController
 		
@@ -66,16 +69,14 @@ class GetData : NSObject {
 					return
 				}
 
-				print("Use data")
-				DispatchQueue.main.async(execute: useData)
+				useData(data)
 				
 			} catch {
 				print("error while parsing json")
 			}
 		}
-		
-		//let URLSession = Foundation.URLSession(configuration: .default())
-		let session = URLSession(configuration:URLSessionConfiguration.default)
+
+		let session = URLSession(configuration:.default)
 		let url = URL(string: urlstring)!
 		let prometheus = session.dataTask(with: url, completionHandler: handlePrometheusResponse)
 		
@@ -86,10 +87,8 @@ class GetData : NSObject {
 	
 	class func useDummyData () {
 		let post = Post()
-		
-		let a = Array(repeating: post, count: 7)
-		data = a
-		DispatchQueue.main.async(execute: useData)
+		let data = Array(repeating: post, count: 7)
+		useData(data)
 	}
 }
 

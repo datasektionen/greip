@@ -14,13 +14,13 @@ var reusableCellId = "tablefeedcell"
 class FeedViewController : UITableViewController {
 	var data: [Post] = [] {
 		didSet {
+			// Update UI when data changes
 			self.tableView.reloadData()
-			print("Data set")
 		}
 	}
 
     override func viewDidLoad() {
-        self.tableView.estimatedRowHeight = 200
+        self.tableView.estimatedRowHeight = 70
         self.tableView.rowHeight = UITableViewAutomaticDimension
     }
 
@@ -33,22 +33,24 @@ class FeedViewController : UITableViewController {
         let post = data[(indexPath as NSIndexPath).row]
 
 		cell.post = post
-
         return cell
     }
-	
-	override func show(_ vc: UIViewController, sender: Any?) {
-		print("will show view")
 
-		let data = (sender as! FeedCell).post
-		let detailView = vc as! PostDetailVC
-		detailView.post = data
-		
-		self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-//		
-//		detailView.navigationItem.setLeftBarButton(UIBarButtonItem.init(
-//			barButtonSystemItem: .stop, target: detailView, action: #selector(PostDetailVC.close)), animated: true)
-//
-		navigationController!.pushViewController(vc, animated: true)
+	// Called when a FeedCell wants to present it's corresponding PostDetailVC
+	override func show(_ vc: UIViewController, sender: Any?) {
+		if let cell = sender as? FeedCell {
+			let data = cell.post
+			let detailView = vc as! PostDetailVC
+			detailView.post = data
+
+			self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
+
+			//		detailView.navigationItem.setLeftBarButton(UIBarButtonItem.init(
+			//			barButtonSystemItem: .stop, target: detailView, action: #selector(PostDetailVC.close)), animated: true)
+
+			navigationController!.pushViewController(vc, animated: true)
+		} else {
+			// Something else than a FeedCell wants to be presented
+		}
 	}
 }
