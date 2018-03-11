@@ -15,11 +15,16 @@ class GetData : NSObject {
 	static fileprivate var navViewController = UINavigationController()
 	static fileprivate var feedViewController = FeedViewController()
 	
-	class func useData(_ data: [Post]) {
+	class func useData(_ data: [Post]?) {
 		// Run on the main thread as the UI will be updated
 		DispatchQueue.main.async {
-			print("Using data")
-			feedViewController.data = data
+			if data != nil {
+				print("Using data")
+				feedViewController.data = data!
+			} else {
+				print("No data")
+				feedViewController.data = [Post]()
+			}
 			let appDelegate = UIApplication.shared.delegate as! AppDelegate
 			appDelegate.window!.rootViewController = navViewController
 		}
@@ -29,56 +34,44 @@ class GetData : NSObject {
 		var data = [Post]()
 		navViewController = nvc
 		feedViewController = nvc.viewControllers[0] as! FeedViewController
-		
-		func handlePrometheusResponse(_ urldata: Data?, response: URLResponse?, error: Error?) -> Void {
-			if error != nil {
-				print("error on http request")
-				useDummyData()
-				return
-			}
-			do {
-				print("Data received")
-				let json = try JSONSerialization.jsonObject(with: urldata!, options: .allowFragments)
-				
-				for post in json as! [[String: AnyObject]] {
-					let title = post["title_sv"] as? String
-					print(title!)
-					let time = post["publishDate"] as? String
-
-					let rawcontent = post["content_sv"] as? String
-					var content: NSAttributedString
-					if let attcontent = try? NSAttributedString(
-						data: (rawcontent?.data(using: String.Encoding.unicode, allowLossyConversion: true)!)!,
-						options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
-						documentAttributes: nil) {
-							content = attcontent
-					} else {
-						content = NSAttributedString(string:rawcontent!)
-					}
-					let author = post["author"] as? String
-					
-					let postpost = Post(title: title!, date: time!, content: content, author: author!)
-					
-					data.append(postpost)
-				}
-				
-				let vc = nvc.viewControllers[0] as? FeedViewController
-				
-				if vc == nil {
-					print("nvc has no view...")
-					return
-				}
-
-				useData(data)
-				
-			} catch {
-				print("error while parsing json")
-			}
-		}
 
 		let session = URLSession(configuration:.default)
 		let url = URL(string: urlstring)!
-		let prometheus = session.dataTask(with: url, completionHandler: handlePrometheusResponse)
+
+		let prometheus = session.dataTask(with: url, completionHandler: {
+				(_ urldata: Data?, response: URLResponse?, error: Error?) in
+			if error != nil {
+				print("Error on HTTP request")
+				useData(nil)
+				return
+			}
+
+			print("Data received")
+			guard let json = try? JSONSerialization.jsonObject(with: urldata!) else {
+				print("Error while parsing JSON")
+				useData(nil)
+				return
+			}
+
+			for post in json as! [[String: AnyObject]] {
+				guard let title = post["title_sv"] as? String else { continue }
+				guard let time = post["publishDate"] as? String else { continue }
+				guard let author = post["author"] as? String else { continue }
+				guard let rawcontent = post["content_sv"] as? String else { continue }
+
+				var content: NSAttributedString
+				if let attcontent = try? NSAttributedString(
+					data: (rawcontent.data(using: String.Encoding.unicode, allowLossyConversion: true)!),
+					options: [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html],
+					documentAttributes: nil) {
+					content = attcontent
+				} else {
+					content = NSAttributedString(string:rawcontent)
+				}
+				data.append(Post(title: title, date: time, content: content, author: author))
+			}
+			useData(data)
+		})
 		
 		print("Requesting data")
 		prometheus.resume()
