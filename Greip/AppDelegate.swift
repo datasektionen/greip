@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 		let dataFeed = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
 
-        GetData.getData(dataFeed)
+        Prometheus.getData(dataFeed)
         return true
     }
     
