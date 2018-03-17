@@ -13,15 +13,30 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
-    
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 		// FIRApp.configure()
 
-		let dataFeed = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
-
-        GetData.getData(dataFeed)
+		DispatchQueue.main.async {
+			let navController = UIStoryboard.init(name: "Main", bundle: nil)
+				.instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
+			let feedViewController = navController.viewControllers[0] as! FeedViewController
+			
+			// Fetch feed from server
+			let (feed, error) = Prometheus.fetchFeed()
+			
+			if error != nil {
+				// TODO: Handle different error types
+				print("No data")
+				feedViewController.data = [Post]()
+			} else {
+				print("Using data")
+				feedViewController.data = feed!
+			}
+			self.window!.rootViewController = navController
+		}
         return true
     }
     
