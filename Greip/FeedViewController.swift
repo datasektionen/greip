@@ -38,19 +38,13 @@ class FeedViewController : UITableViewController {
 
 	// Called when a FeedCell wants to present it's corresponding PostDetailVC
 	override func show(_ vc: UIViewController, sender: Any?) {
-		if let cell = sender as? FeedCell {
-			let data = cell.post
-			let detailView = vc as! PostDetailVC
-			detailView.post = data
+		if let cell = sender as? FeedCell, let detailView = vc as? PostDetailVC{
+			detailView.post = cell.post
 
-			self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-
-			//		detailView.navigationItem.setLeftBarButton(UIBarButtonItem.init(
-			//			barButtonSystemItem: .stop, target: detailView, action: #selector(PostDetailVC.close)), animated: true)
-
+			navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
 			navigationController!.pushViewController(vc, animated: true)
 		} else {
-			// Something else than a FeedCell wants to be presented
+			// The method is called unexpectedly
 		}
 	}
 }
