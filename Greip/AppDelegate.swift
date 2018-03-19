@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			if error != nil {
 				// TODO: Handle different error types
 				print("No data")
-				feedViewController.data = [Post]()
+				feedViewController.posts = [Post]()
 			} else {
 				print("Using data")
-				feedViewController.data = feed!
+				feedViewController.posts = feed!
 			}
 			self.window!.rootViewController = navController
 		}

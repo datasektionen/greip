@@ -12,7 +12,7 @@ import UIKit
 var reusableCellId = "tablefeedcell"
 
 class FeedViewController : UITableViewController {
-	var data: [Post] = [] {
+	var posts: [Post] = [] {
 		didSet {
 			// Update UI when data changes
 			self.tableView.reloadData()
@@ -25,12 +25,12 @@ class FeedViewController : UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        return posts.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusableCellId) as! FeedCell
-        let post = data[(indexPath as NSIndexPath).row]
+        let post = posts[indexPath.row]
 
 		cell.post = post
         return cell
