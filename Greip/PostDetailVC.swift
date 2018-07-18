@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+/// The Controller of the Detailed Post view, which fully shows a Post.
 class PostDetailVC : UIViewController {
 	@IBOutlet fileprivate var postTitle: UILabel!
 	@IBOutlet fileprivate var content: UITextView!
@@ -24,6 +25,6 @@ class PostDetailVC : UIViewController {
 		mutableContent.addAttributes(attributes, range:NSRange(location: 0, length: mutableContent.mutableString.length))
 
 		content.attributedText = mutableContent
-		meta.text = "// \(post.author), \(post.time)"
+		meta.text = "// \(post.author), \(post.date)"
 	}
 }

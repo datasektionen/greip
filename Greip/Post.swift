@@ -8,18 +8,20 @@
 
 import Foundation
 
-var dateFormatterFromServer = DateFormatter(), dateFormatterFromDate = DateFormatter()
-
+/// A single item of the DataFeed.
 class Post : NSObject {
 	let content: NSAttributedString
-	let time, title, author: String
-    
+	let date, title, author: String
+
+	let dateFormatterFromServer = DateFormatter()
+	let dateFormatterFromDate = DateFormatter()
+
 	init(title: String, date: String, content: NSAttributedString, author: String) {
 		dateFormatterFromDate.dateStyle = .short
 		dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
 
         self.title = title
-        self.time = dateFormatterFromDate.string(from: dateFormatterFromServer.date(from: date)!)
+        self.date = dateFormatterFromDate.string(from: dateFormatterFromServer.date(from: date)!)
         self.content = content
 		self.author = author
     }

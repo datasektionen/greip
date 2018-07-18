@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-
+/// The cell of the DataFeed view, showing one Post in the Feed.
 class FeedCell : UITableViewCell {
     @IBOutlet fileprivate var content: UILabel!
     @IBOutlet fileprivate var title: UILabel!
@@ -20,8 +20,7 @@ class FeedCell : UITableViewCell {
 	
 	var post: Post! {
 		didSet {
-			let text = post.content.string
-			content.text = text
+			content.text = post.content.string
 			title.text = post.title
 		}
 	}

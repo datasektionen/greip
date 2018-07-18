@@ -11,6 +11,9 @@ import UIKit
 
 var reusableCellId = "tablefeedcell"
 
+/// The Controller of the DataFeed view.
+///
+/// The DataFeed consists of a list of Posts, which is presented as a UITableView of FeedCells.
 class FeedViewController : UITableViewController {
 	var posts: [Post] = [] {
 		didSet {
@@ -41,9 +44,9 @@ class FeedViewController : UITableViewController {
         return cell
     }
 
-	// Called when a FeedCell wants to present it's corresponding PostDetailVC
+	/// Called when a FeedCell is clicked and wants to present it's corresponding PostDetailVC.
 	override func show(_ vc: UIViewController, sender: Any?) {
-		if let cell = sender as? FeedCell, let detailView = vc as? PostDetailVC{
+		if let cell = sender as? FeedCell, let detailView = vc as? PostDetailVC {
 			detailView.post = cell.post
 
 			navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
