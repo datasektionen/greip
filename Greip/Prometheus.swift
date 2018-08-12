@@ -88,11 +88,10 @@ class Prometheus : NSObject {
 		var posts = [Post]()
 
 		for post in json as! [[String: AnyObject]] {
-			// TODO: Do not use as!
-			let title = post["title_sv"] as! String
-			let time = post["publishDate"] as! String
-			let author = post["author"] as! String
-			let rawcontent = post["content_sv"] as! String
+			let title = (post["title_sv"] as? String) ?? ""
+			let time = (post["publishDate"] as? String) ?? ""
+			let author = (post["author"] as? String) ?? ""
+			let rawcontent = (post["content_sv"] as? String) ?? ""
 
 			var content: NSAttributedString
 			if let attcontent = try? NSAttributedString(
