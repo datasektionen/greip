@@ -16,10 +16,6 @@ class PostDetailVC : UIViewController {
 
 	var post: Post!
 
-	required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
-	}
-
 	override func viewDidLoad() {
 		postTitle.text = post.title
 		let attributes = content.attributedText.attributes(at: 0, effectiveRange: nil)

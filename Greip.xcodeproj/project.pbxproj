@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		9C3F5E9F205ACC63009068AC /* Prometheus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F5E9E205ACC63009068AC /* Prometheus.swift */; };
 		9C7DC75F1D16A85A00FB81D8 /* PostDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7DC75E1D16A85A00FB81D8 /* PostDetailVC.swift */; };
-		9C8CDEDC1E04186A00405E3B /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F041D1E03471B004EF6BB /* GoogleService-Info.plist */; };
-		9C8F041E1E03471B004EF6BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F041D1E03471B004EF6BB /* GoogleService-Info.plist */; };
 		9C9737411CF33B4000DAC6EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9737401CF33B4000DAC6EB /* AppDelegate.swift */; };
 		9C9737461CF33B4000DAC6EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C9737441CF33B4000DAC6EB /* Main.storyboard */; };
 		9C9737481CF33B4000DAC6EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C9737471CF33B4000DAC6EB /* Assets.xcassets */; };
@@ -24,7 +22,6 @@
 /* Begin PBXFileReference section */
 		9C3F5E9E205ACC63009068AC /* Prometheus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prometheus.swift; sourceTree = "<group>"; };
 		9C7DC75E1D16A85A00FB81D8 /* PostDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetailVC.swift; sourceTree = "<group>"; };
-		9C8F041D1E03471B004EF6BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C97373D1CF33B4000DAC6EB /* Dataflödet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dataflödet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9737401CF33B4000DAC6EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C9737451CF33B4000DAC6EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -68,7 +65,6 @@
 		9C97373F1CF33B4000DAC6EB /* Greip */ = {
 			isa = PBXGroup;
 			children = (
-				9C8F041D1E03471B004EF6BB /* GoogleService-Info.plist */,
 				9C9737401CF33B4000DAC6EB /* AppDelegate.swift */,
 				9C9737571CF3408C00DAC6EB /* FeedCell.swift */,
 				9C9737601CF340C200DAC6EB /* FeedViewController.swift */,
@@ -127,7 +123,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Emma Nimstad";
 				TargetAttributes = {
 					9C97373C1CF33B4000DAC6EB = {
@@ -163,7 +159,6 @@
 			files = (
 				9C97374B1CF33B4000DAC6EB /* LaunchScreen.storyboard in Resources */,
 				9C9737481CF33B4000DAC6EB /* Assets.xcassets in Resources */,
-				9C8F041E1E03471B004EF6BB /* GoogleService-Info.plist in Resources */,
 				9C9737461CF33B4000DAC6EB /* Main.storyboard in Resources */,
 				9C9737661CF3443600DAC6EB /* crash_n_burn.png in Resources */,
 			);
@@ -177,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C3F5E9F205ACC63009068AC /* Prometheus.swift in Sources */,
-				9C8CDEDC1E04186A00405E3B /* GoogleService-Info.plist in Sources */,
 				9C9737411CF33B4000DAC6EB /* AppDelegate.swift in Sources */,
 				9C97375B1CF3408C00DAC6EB /* FeedCell.swift in Sources */,
 				9C7DC75F1D16A85A00FB81D8 /* PostDetailVC.swift in Sources */,
@@ -221,12 +215,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -253,7 +249,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -274,12 +270,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -300,7 +298,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -319,7 +317,7 @@
 				INFOPLIST_FILE = Greip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Nimstad.Greip;
+				PRODUCT_BUNDLE_IDENTIFIER = se.datasektionen.greip;
 				PRODUCT_NAME = "Dataflödet";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -340,7 +338,7 @@
 				INFOPLIST_FILE = Greip/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Nimstad.Greip;
+				PRODUCT_BUNDLE_IDENTIFIER = se.datasektionen.greip;
 				PRODUCT_NAME = "Dataflödet";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
