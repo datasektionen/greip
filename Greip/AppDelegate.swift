@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
 		DispatchQueue.main.async {
-			let navController = UIStoryboard.init(name: "Main", bundle: nil)
-				.instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
-			let feedViewController = navController.viewControllers[0] as! FeedViewController
+			let feedViewController = FeedViewController.viewController()
 			
 			// Fetch feed from server
 			let (feed, error) = Prometheus.fetchFeed()
@@ -32,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 				print("Using data")
 				feedViewController.posts = feed!
 			}
-			self.window!.rootViewController = navController
+			self.window!.rootViewController = feedViewController.navigationController!
 		}
         return true
     }

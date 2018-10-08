@@ -19,6 +19,12 @@ class FeedViewController : UITableViewController {
 		}
 	}
 
+	class func viewController() -> FeedViewController {
+		let navController = UIStoryboard.init(name: "Main", bundle: nil)
+			.instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
+		return navController.viewControllers[0] as! FeedViewController
+	}
+
     override func viewDidLoad() {
         self.tableView.estimatedRowHeight = 70
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -46,5 +52,9 @@ class FeedViewController : UITableViewController {
 		} else {
 			// The method is called unexpectedly
 		}
+	}
+
+	@IBAction func refresh() {
+		self.refreshControl?.endRefreshing()
 	}
 }
