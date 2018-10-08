@@ -15,21 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+		let feedViewController = FeedViewController.viewController()
 
-		DispatchQueue.main.async {
-			let feedViewController = FeedViewController.viewController()
-			
-			// Fetch feed from server
-			let (feed, error) = Prometheus.fetchFeed()
-			
-			if error != nil {
-				// TODO: Handle different error types
-				print("No data")
-				feedViewController.posts = [Post]()
-			} else {
-				print("Using data")
-				feedViewController.posts = feed!
-			}
+		// Fetch feed from server
+		let (feed, error) = Prometheus.fetchFeed()
+
+		if error != nil {
+			// TODO: Handle different error types
+			print("No data")
+			feedViewController.posts = [Post]()
+			self.window!.rootViewController = feedViewController.navigationController!
+		} else {
+			print("Using data")
+			feedViewController.posts = feed!
 			self.window!.rootViewController = feedViewController.navigationController!
 		}
         return true
