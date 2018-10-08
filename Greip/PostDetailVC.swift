@@ -18,7 +18,8 @@ class PostDetailVC : UIViewController {
 
 	override func viewDidLoad() {
 		postTitle.text = post.title
-		let attributes = content.attributedText.attributes(at: 0, effectiveRange: nil)
+		var attributes = content.attributedText.attributes(at: 0, effectiveRange: nil)
+		attributes.updateValue(UIFont.init(name: "Lato-Regular", size: 14)!, forKey: NSAttributedString.Key.font)
 		let mutableContent = NSMutableAttributedString(attributedString:post.content)
 		mutableContent.addAttributes(attributes, range:NSRange(location: 0, length: mutableContent.mutableString.length))
 

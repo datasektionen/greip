@@ -20,8 +20,7 @@ class FeedViewController : UITableViewController {
 	}
 
 	class func viewController() -> FeedViewController {
-		let navController = UIStoryboard.init(name: "Main", bundle: nil)
-			.instantiateViewController(withIdentifier: "DataFeedNC") as! UINavigationController
+		let navController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
 		return navController.viewControllers[0] as! FeedViewController
 	}
 

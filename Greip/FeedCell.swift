@@ -13,6 +13,10 @@ import UIKit
 class FeedCell : UITableViewCell {
     @IBOutlet fileprivate var content: UILabel!
     @IBOutlet fileprivate var title: UILabel!
+
+	override func awakeFromNib() {
+		content.font = UIFont.init(name: "Lato-Regular", size: 16)
+	}
 	
 	var post: Post! {
 		didSet {
@@ -21,9 +25,5 @@ class FeedCell : UITableViewCell {
 			title.text = post.title
 		}
 	}
-	
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
     
 }

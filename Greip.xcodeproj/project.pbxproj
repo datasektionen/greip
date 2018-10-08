@@ -17,6 +17,8 @@
 		9C97375D1CF3408C00DAC6EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9737591CF3408C00DAC6EB /* Post.swift */; };
 		9C9737611CF340C200DAC6EB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9737601CF340C200DAC6EB /* FeedViewController.swift */; };
 		9C9737661CF3443600DAC6EB /* crash_n_burn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9737651CF3443600DAC6EB /* crash_n_burn.png */; };
+		F97F6784216BDCD900D4C78F /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97F6782216BDCD900D4C78F /* Lato-Bold.ttf */; };
+		F97F6785216BDCD900D4C78F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97F6783216BDCD900D4C78F /* Lato-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		9C9737591CF3408C00DAC6EB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9C9737601CF340C200DAC6EB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9C9737651CF3443600DAC6EB /* crash_n_burn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crash_n_burn.png; path = Images/crash_n_burn.png; sourceTree = "<group>"; };
+		F97F6782216BDCD900D4C78F /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		F97F6783216BDCD900D4C78F /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +75,8 @@
 				9C7DC75E1D16A85A00FB81D8 /* PostDetailVC.swift */,
 				9C9737591CF3408C00DAC6EB /* Post.swift */,
 				9C3F5E9E205ACC63009068AC /* Prometheus.swift */,
-				9C9737441CF33B4000DAC6EB /* Main.storyboard */,
-				9C9737491CF33B4000DAC6EB /* LaunchScreen.storyboard */,
 				9C9737681CF3448C00DAC6EB /* Supporting files */,
+				F97F6780216BD67100D4C78F /* Fonts */,
 				9C9737551CF3404E00DAC6EB /* Images */,
 			);
 			path = Greip;
@@ -90,10 +93,21 @@
 		9C9737681CF3448C00DAC6EB /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				9C9737441CF33B4000DAC6EB /* Main.storyboard */,
+				9C9737491CF33B4000DAC6EB /* LaunchScreen.storyboard */,
 				9C9737471CF33B4000DAC6EB /* Assets.xcassets */,
 				9C97374C1CF33B4000DAC6EB /* Info.plist */,
 			);
 			name = "Supporting files";
+			sourceTree = "<group>";
+		};
+		F97F6780216BD67100D4C78F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F97F6782216BDCD900D4C78F /* Lato-Bold.ttf */,
+				F97F6783216BDCD900D4C78F /* Lato-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +172,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C97374B1CF33B4000DAC6EB /* LaunchScreen.storyboard in Resources */,
+				F97F6785216BDCD900D4C78F /* Lato-Regular.ttf in Resources */,
+				F97F6784216BDCD900D4C78F /* Lato-Bold.ttf in Resources */,
 				9C9737481CF33B4000DAC6EB /* Assets.xcassets in Resources */,
 				9C9737461CF33B4000DAC6EB /* Main.storyboard in Resources */,
 				9C9737661CF3443600DAC6EB /* crash_n_burn.png in Resources */,
