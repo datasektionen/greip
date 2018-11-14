@@ -18,10 +18,20 @@ class Post : NSObject {
 
 	init(title: String, date: String, content: NSAttributedString, author: String) {
 		dateFormatterFromDate.dateStyle = .short
-		dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+		dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+
+		if let d = dateFormatterFromServer.date(from: date) {
+			self.date = dateFormatterFromDate.string(from: d)
+		} else {
+			dateFormatterFromServer.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+			if let d = dateFormatterFromServer.date(from: date) {
+				self.date = dateFormatterFromDate.string(from: d)
+			} else {
+				self.date = ""
+			}
+		}
 
         self.title = title
-        self.date = dateFormatterFromDate.string(from: dateFormatterFromServer.date(from: date)!)
         self.content = content
 		self.author = author
     }

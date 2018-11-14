@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let feedViewController = FeedViewController.viewController()
 
 		// Fetch feed from server
-		let (feed, error) = Prometheus.fetchFeed()
+		let (feed, error) = Calypso.fetchFeed()
 
 		if error != nil {
 			// TODO: Handle different error types

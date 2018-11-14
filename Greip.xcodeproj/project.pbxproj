@@ -17,6 +17,7 @@
 		9C97375D1CF3408C00DAC6EB /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9737591CF3408C00DAC6EB /* Post.swift */; };
 		9C9737611CF340C200DAC6EB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9737601CF340C200DAC6EB /* FeedViewController.swift */; };
 		9C9737661CF3443600DAC6EB /* crash_n_burn.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C9737651CF3443600DAC6EB /* crash_n_burn.png */; };
+		9CDFCB55219C810C0080490A /* Calypso.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFCB54219C810C0080490A /* Calypso.swift */; };
 		F97F6784216BDCD900D4C78F /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97F6782216BDCD900D4C78F /* Lato-Bold.ttf */; };
 		F97F6785216BDCD900D4C78F /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97F6783216BDCD900D4C78F /* Lato-Regular.ttf */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		9C9737591CF3408C00DAC6EB /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		9C9737601CF340C200DAC6EB /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		9C9737651CF3443600DAC6EB /* crash_n_burn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crash_n_burn.png; path = Images/crash_n_burn.png; sourceTree = "<group>"; };
+		9CDFCB54219C810C0080490A /* Calypso.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calypso.swift; sourceTree = "<group>"; };
 		F97F6782216BDCD900D4C78F /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
 		F97F6783216BDCD900D4C78F /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9737401CF33B4000DAC6EB /* AppDelegate.swift */,
+				9CDFCB54219C810C0080490A /* Calypso.swift */,
 				9C9737571CF3408C00DAC6EB /* FeedCell.swift */,
 				9C9737601CF340C200DAC6EB /* FeedViewController.swift */,
 				9C7DC75E1D16A85A00FB81D8 /* PostDetailVC.swift */,
@@ -190,6 +193,7 @@
 				9C3F5E9F205ACC63009068AC /* Prometheus.swift in Sources */,
 				9C9737411CF33B4000DAC6EB /* AppDelegate.swift in Sources */,
 				9C97375B1CF3408C00DAC6EB /* FeedCell.swift in Sources */,
+				9CDFCB55219C810C0080490A /* Calypso.swift in Sources */,
 				9C7DC75F1D16A85A00FB81D8 /* PostDetailVC.swift in Sources */,
 				9C97375D1CF3408C00DAC6EB /* Post.swift in Sources */,
 				9C9737611CF340C200DAC6EB /* FeedViewController.swift in Sources */,
