@@ -6,10 +6,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </array>
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
@@ -65,7 +69,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
-                                            <rect key="frame" x="16" y="43.5" width="343" height="61"/>
+                                            <rect key="frame" x="16" y="54" width="343" height="61"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock.">
                                                     <attributes>
@@ -78,8 +82,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-4U-294">
-                                            <rect key="frame" x="16" y="15" width="34" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                            <rect key="frame" x="16" y="15" width="35" height="31"/>
+                                            <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                             <color key="textColor" red="0.93809878830000004" green="0.0" blue="0.42589530349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -91,7 +95,7 @@
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="Shw-ir-KGk"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="trailing" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" id="eHf-RC-FGX"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="top" secondItem="3L3-4U-294" secondAttribute="bottom" constant="8" id="jfq-7r-klC"/>
-                                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="QER-bf-2Yj" secondAttribute="bottom" id="krb-xI-4fU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QER-bf-2Yj" secondAttribute="bottom" id="krb-xI-4fU"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" constant="-8" id="mx1-az-AXm"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="vTC-LV-Z38"/>
                                     </constraints>
@@ -141,6 +145,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Dataflödet" id="wgp-FO-LIu"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="0ND-CL-C4D">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -164,21 +169,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VG0-3e-ldU">
-                                        <rect key="frame" x="20" y="16" width="335" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                        <rect key="frame" x="20" y="16" width="335" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                         <color key="textColor" red="0.93809878830000004" green="0.0" blue="0.42589530349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ballerup" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gan-bs-Tsc">
-                                        <rect key="frame" x="16" y="45.5" width="343" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <rect key="frame" x="16" y="44.5" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Postad av någon" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qQ-7v-0iD">
-                                        <rect key="frame" x="10" y="79.5" width="345" height="20"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="20" y="78.5" width="335" height="20"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -187,9 +192,9 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="VG0-3e-ldU" secondAttribute="trailing" constant="12" id="4Ih-06-y0g"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="gan-bs-Tsc" secondAttribute="trailing" constant="8" id="8qH-0D-RAU"/>
                                     <constraint firstItem="gan-bs-Tsc" firstAttribute="centerX" secondItem="8Or-xk-947" secondAttribute="centerX" id="B4I-jl-kvB"/>
+                                    <constraint firstItem="4qQ-7v-0iD" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leadingMargin" constant="12" id="Cj7-Av-Wkz"/>
                                     <constraint firstItem="gan-bs-Tsc" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leadingMargin" constant="8" id="Ikh-lt-cpE"/>
-                                    <constraint firstItem="4qQ-7v-0iD" firstAttribute="width" secondItem="8Or-xk-947" secondAttribute="width" constant="-30" id="R4D-iR-XYb"/>
-                                    <constraint firstItem="4qQ-7v-0iD" firstAttribute="trailing" secondItem="8Or-xk-947" secondAttribute="trailingMargin" constant="-12" id="T9l-Ya-cK1"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="4qQ-7v-0iD" secondAttribute="trailing" constant="12" id="T9l-Ya-cK1"/>
                                     <constraint firstItem="VG0-3e-ldU" firstAttribute="top" secondItem="8Or-xk-947" secondAttribute="top" constant="16" id="WUF-Vq-j2b"/>
                                     <constraint firstItem="VG0-3e-ldU" firstAttribute="leading" secondItem="8Or-xk-947" secondAttribute="leadingMargin" constant="12" id="YZf-Go-kZv"/>
                                     <constraint firstItem="4qQ-7v-0iD" firstAttribute="top" secondItem="gan-bs-Tsc" secondAttribute="bottom" id="sZx-5i-cJT"/>
@@ -260,4 +265,9 @@
             <point key="canvasLocation" x="280.80000000000001" y="-497.00149925037488"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="Cerise">
+            <color red="0.90980392156862744" green="0.23921568627450981" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
