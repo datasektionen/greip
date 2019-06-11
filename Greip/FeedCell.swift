@@ -13,6 +13,12 @@ import UIKit
 class FeedCell : UITableViewCell {
     @IBOutlet fileprivate var content: UILabel!
     @IBOutlet fileprivate var title: UILabel!
+	var expanded: Bool = false
+
+	func switchExpand() {
+		self.expanded = !self.expanded
+		self.content.numberOfLines = self.expanded ? 0 : 3
+	}
 
 	override func awakeFromNib() {
 		content.font = UIFont.init(name: "Lato-Regular", size: 16)

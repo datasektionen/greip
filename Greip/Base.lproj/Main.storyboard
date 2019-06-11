@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUN-lU-pb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUN-lU-pb1">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,7 +24,6 @@
             <objects>
                 <navigationController storyboardIdentifier="DataFeedNC" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HUN-lU-pb1" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" largeTitles="YES" id="6oF-13-7Qs">
-                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +55,7 @@
                         <color key="separatorColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="3Ng-Rd-o7A">
-                            <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -68,7 +67,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
                                             <rect key="frame" x="16" y="54" width="343" height="61"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock.">
@@ -95,7 +94,7 @@
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="Shw-ir-KGk"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="trailing" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" id="eHf-RC-FGX"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="top" secondItem="3L3-4U-294" secondAttribute="bottom" constant="8" id="jfq-7r-klC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QER-bf-2Yj" secondAttribute="bottom" id="krb-xI-4fU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="QER-bf-2Yj" secondAttribute="bottom" priority="251" id="krb-xI-4fU"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" constant="-8" id="mx1-az-AXm"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="vTC-LV-Z38"/>
                                     </constraints>
@@ -134,7 +133,6 @@
                                 <connections>
                                     <outlet property="content" destination="QER-bf-2Yj" id="DOX-ao-1k9"/>
                                     <outlet property="title" destination="3L3-4U-294" id="dVA-RX-LG1"/>
-                                    <segue destination="m1S-WO-jqr" kind="show" identifier="" id="H0F-aP-YtH"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -162,7 +160,7 @@
             <objects>
                 <viewController storyboardIdentifier="DetailView" title="DetailView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="m1S-WO-jqr" customClass="PostDetailVC" customModule="Dataflödet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Nw4-lX-ylT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Or-xk-947">

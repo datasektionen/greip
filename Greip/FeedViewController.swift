@@ -44,16 +44,12 @@ class FeedViewController : UITableViewController {
         return cell
     }
 
-	/// Called when a FeedCell is clicked and wants to present it's corresponding PostDetailVC.
-	override func show(_ vc: UIViewController, sender: Any?) {
-		if let cell = sender as? FeedCell, let detailView = vc as? PostDetailVC {
-			detailView.post = cell.post
-
-			navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.plain, target:nil, action:nil)
-			navigationController!.pushViewController(vc, animated: true)
-		} else {
-			// The method is called unexpectedly
-		}
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let cell = tableView.cellForRow(at: indexPath) as! FeedCell
+		print(cell.post.title)
+		tableView.performBatchUpdates({
+			cell.switchExpand()
+		})
 	}
 
 	@IBAction func refresh() {
