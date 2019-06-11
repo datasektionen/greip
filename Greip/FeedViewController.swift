@@ -29,7 +29,7 @@ class FeedViewController : UITableViewController {
 
     override func viewDidLoad() {
         self.tableView.estimatedRowHeight = 70
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
