@@ -100,6 +100,7 @@ class Calypso {
 					// If HTML parsing doesn't work, fallback to show the raw content
 					content = NSAttributedString(string:rawcontent)
 				}
+				content = NSAttributedString(string: content.string.trimmingCharacters(in: .whitespacesAndNewlines))
 				posts.append(Post(title: title, date: time, content: content, author: author))
 
 				#if SIMULATOR
