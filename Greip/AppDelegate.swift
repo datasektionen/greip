@@ -13,9 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		let feedViewController = FeedViewController.viewController()
+		let navController = feedViewController.navigationController!
 
 		// Fetch feed from server
 		let (feed, error) = Calypso.fetchFeed()
@@ -24,11 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 			// TODO: Handle different error types
 			print("No data")
 			feedViewController.posts = [Post]()
-			self.window!.rootViewController = feedViewController.navigationController!
+			self.window!.rootViewController = navController
 		} else {
 			print("Using data")
 			feedViewController.posts = feed!
-			self.window!.rootViewController = feedViewController.navigationController!
+			self.window!.rootViewController = navController
 		}
         return true
     }

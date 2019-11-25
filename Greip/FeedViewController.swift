@@ -15,15 +15,17 @@ var reusableCellId = "tablefeedcell"
 ///
 /// The DataFeed consists of a list of Posts, which is presented as a UITableView of FeedCells.
 class FeedViewController : UITableViewController {
+	var expanded: [Bool] = []
 	var posts: [Post] = [] {
 		didSet {
 			// Update UI when data changes
 			self.tableView.reloadData()
+			self.expanded = Array(repeating: false, count: posts.count)
 		}
 	}
 
 	class func viewController() -> FeedViewController {
-		let navController = UIStoryboard.init(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
+		let navController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as! UINavigationController
 		return navController.viewControllers[0] as! FeedViewController
 	}
 
@@ -41,18 +43,22 @@ class FeedViewController : UITableViewController {
         let post = posts[indexPath.row]
 
 		cell.post = post
+		cell.expanded = self.expanded[indexPath.row]
+		cell.fixExpanded()
         return cell
     }
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let cell = tableView.cellForRow(at: indexPath) as! FeedCell
 		print(cell.post.title)
+		self.expanded[indexPath.row] = !self.expanded[indexPath.row]
 		tableView.performBatchUpdates({
 			cell.switchExpand()
 		})
 	}
 
 	@IBAction func refresh() {
+		// TODO
 		self.refreshControl?.endRefreshing()
 	}
 }
