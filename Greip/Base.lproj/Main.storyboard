@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUN-lU-pb1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HUN-lU-pb1">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -47,26 +47,32 @@
         <scene sceneID="vcj-Gs-Wnn">
             <objects>
                 <tableViewController storyboardIdentifier="DataFeed" title="DataFeed" extendedLayoutIncludesOpaqueBars="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IPX-or-gZQ" customClass="FeedViewController" customModule="Dataflödet" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="126" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rze-QQ-MBa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="148" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="rze-QQ-MBa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="3Ng-Rd-o7A">
-                            <rect key="frame" x="0.0" y="182" width="375" height="0.0"/>
+                            <rect key="frame" x="0.0" y="204" width="375" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="tablefeedcell" rowHeight="126" id="v91-If-Ypm" customClass="FeedCell" customModule="Dataflödet" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="126"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="tablefeedcell" rowHeight="148" id="v91-If-Ypm" customClass="FeedCell" customModule="Dataflödet" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="148"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="v91-If-Ypm" id="bXH-gm-cYN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="126"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTa-uM-z6U">
+                                            <rect key="frame" x="321" y="108.5" width="38" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
+                                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="253" verticalHuggingPriority="1000" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QER-bf-2Yj">
                                             <rect key="frame" x="16" y="43.5" width="343" height="61"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Bacon ipsum dolor amet strip steak doner t-bone chicken tail, picanha leberkas venison sirloin drumstick pastrami ham hock.">
@@ -79,7 +85,7 @@
                                             </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-4U-294">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3L3-4U-294">
                                             <rect key="frame" x="16" y="15" width="35" height="20.5"/>
                                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="17"/>
                                             <color key="textColor" red="0.93809878830000004" green="0.0" blue="0.42589530349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,47 +96,30 @@
                                         <constraint firstItem="3L3-4U-294" firstAttribute="top" secondItem="bXH-gm-cYN" secondAttribute="topMargin" id="1PI-0h-e4b">
                                             <variation key="heightClass=regular-widthClass=compact" constant="4"/>
                                         </constraint>
+                                        <constraint firstItem="RTa-uM-z6U" firstAttribute="top" secondItem="QER-bf-2Yj" secondAttribute="bottom" constant="4" id="A0u-On-6Gt"/>
+                                        <constraint firstItem="RTa-uM-z6U" firstAttribute="trailing" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" id="RYD-fR-OLQ"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="Shw-ir-KGk"/>
+                                        <constraint firstItem="RTa-uM-z6U" firstAttribute="bottom" secondItem="bXH-gm-cYN" secondAttribute="bottomMargin" priority="999" id="XTs-eB-SiY"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="trailing" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" id="eHf-RC-FGX"/>
+                                        <constraint firstItem="RTa-uM-z6U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="jEa-QC-Byf"/>
                                         <constraint firstItem="QER-bf-2Yj" firstAttribute="top" secondItem="3L3-4U-294" secondAttribute="bottom" constant="8" id="jfq-7r-klC"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QER-bf-2Yj" secondAttribute="bottom" priority="251" id="krb-xI-4fU"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="bXH-gm-cYN" secondAttribute="trailingMargin" constant="-8" id="mx1-az-AXm"/>
+                                        <constraint firstItem="QER-bf-2Yj" firstAttribute="bottom" secondItem="bXH-gm-cYN" secondAttribute="bottomMargin" priority="999" id="sVg-oQ-aDN"/>
                                         <constraint firstItem="3L3-4U-294" firstAttribute="leading" secondItem="bXH-gm-cYN" secondAttribute="leadingMargin" id="vTC-LV-Z38"/>
                                     </constraints>
                                     <variation key="default">
-                                        <mask key="subviews">
-                                            <exclude reference="QER-bf-2Yj"/>
-                                            <exclude reference="3L3-4U-294"/>
-                                        </mask>
                                         <mask key="constraints">
-                                            <exclude reference="1PI-0h-e4b"/>
-                                            <exclude reference="mx1-az-AXm"/>
-                                            <exclude reference="vTC-LV-Z38"/>
-                                            <exclude reference="Shw-ir-KGk"/>
-                                            <exclude reference="eHf-RC-FGX"/>
-                                            <exclude reference="jfq-7r-klC"/>
-                                            <exclude reference="krb-xI-4fU"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
-                                        <mask key="subviews">
-                                            <include reference="QER-bf-2Yj"/>
-                                            <include reference="3L3-4U-294"/>
-                                        </mask>
-                                        <mask key="constraints">
-                                            <include reference="1PI-0h-e4b"/>
-                                            <include reference="mx1-az-AXm"/>
-                                            <include reference="vTC-LV-Z38"/>
-                                            <include reference="Shw-ir-KGk"/>
-                                            <include reference="eHf-RC-FGX"/>
-                                            <include reference="jfq-7r-klC"/>
-                                            <include reference="krb-xI-4fU"/>
+                                            <exclude reference="XTs-eB-SiY"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="content" destination="QER-bf-2Yj" id="DOX-ao-1k9"/>
+                                    <outlet property="contentBottomConstraint" destination="sVg-oQ-aDN" id="5I9-4a-Rb1"/>
+                                    <outlet property="meta" destination="RTa-uM-z6U" id="03r-rv-5eT"/>
+                                    <outlet property="metaBottomConstraint" destination="XTs-eB-SiY" id="Meo-IT-ZtI"/>
+                                    <outlet property="metaTopConstraint" destination="A0u-On-6Gt" id="mQK-4v-jrR"/>
                                     <outlet property="title" destination="3L3-4U-294" id="dVA-RX-LG1"/>
                                 </connections>
                             </tableViewCell>
