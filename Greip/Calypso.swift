@@ -14,7 +14,7 @@ class Calypso {
 	static private let lock = NSLock()
 
 
-	/// Error types for the Prometheus connection.
+	/// Error types for the Calypso connection.
 	struct CalypsoError: Error {
 		enum Kind {
 			case PendingRequest
@@ -86,7 +86,7 @@ class Calypso {
 		if let jsoncontent = parsedjson["content"] as? [[String: Any]] {
 			for post in jsoncontent {
 				let title = (post["titleSwedish"] as? String) ?? ""
-				let time = (post["publishDate"] as? String) ?? ""
+				let date = (post["publishDate"] as? String) ?? ""
 				let author = (post["authorDisplay"] as? String) ?? ""
 				let rawcontent = (post["contentSwedish"] as? String) ?? ""
 
@@ -98,10 +98,10 @@ class Calypso {
 					content = attcontent
 				} else {
 					// If HTML parsing doesn't work, fallback to show the raw content
-					content = NSAttributedString(string:rawcontent)
+					content = NSAttributedString(string: rawcontent)
 				}
 				content = NSAttributedString(string: content.string.trimmingCharacters(in: .whitespacesAndNewlines))
-				posts.append(Post(title: title, date: time, content: content, author: author))
+				posts.append(Post(title: title, date: date, content: content, author: author))
 
 				#if SIMULATOR
 				print(title)
@@ -112,13 +112,6 @@ class Calypso {
 				#endif
 			}
 		}
-//		for post in content {
-//			if let p2 = post as? [String: Any] {
-//				let title = (p2["title_sv"] as? String) ?? ""
-//			}
-//
-//
-//		}
 		return (posts, nil)
 	}
 }
